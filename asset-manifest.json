@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/FoliFF/silver-meet/static/css/main.073c9b0a.css",
-    "main.js": "/FoliFF/silver-meet/static/js/main.41135c53.js",
-    "static/js/787.4b564826.chunk.js": "/FoliFF/silver-meet/static/js/787.4b564826.chunk.js",
-    "service-worker.js": "/FoliFF/silver-meet/service-worker.js",
-    "static/media/logo.svg": "/FoliFF/silver-meet/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
-    "index.html": "/FoliFF/silver-meet/index.html",
-    "main.073c9b0a.css.map": "/FoliFF/silver-meet/static/css/main.073c9b0a.css.map",
-    "main.41135c53.js.map": "/FoliFF/silver-meet/static/js/main.41135c53.js.map",
-    "787.4b564826.chunk.js.map": "/FoliFF/silver-meet/static/js/787.4b564826.chunk.js.map"
+    "main.css": "/silver-meet/static/css/main.073c9b0a.css",
+    "main.js": "/silver-meet/static/js/main.0257c94d.js",
+    "static/js/787.4b564826.chunk.js": "/silver-meet/static/js/787.4b564826.chunk.js",
+    "service-worker.js": "/silver-meet/service-worker.js",
+    "static/media/logo.svg": "/silver-meet/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/silver-meet/index.html",
+    "main.073c9b0a.css.map": "/silver-meet/static/css/main.073c9b0a.css.map",
+    "main.0257c94d.js.map": "/silver-meet/static/js/main.0257c94d.js.map",
+    "787.4b564826.chunk.js.map": "/silver-meet/static/js/787.4b564826.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.41135c53.js"
+    "static/js/main.0257c94d.js"
   ]
 }
