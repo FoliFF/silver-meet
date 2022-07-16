@@ -4,13 +4,13 @@ This meet application is built so users can find upcoming events in ant given ci
 ## Feature 2: Show and Hide Event Details
 
 #### Scenario 1 : Collapsed by Default
-User is on the main page of the app when nothing is selected, then the even details will be 'collapsed'.
+Given User is on the main page of the app when nothing is selected, then the even details will be 'collapsed'.
  
 #### Scenario 2: Expanding the details
-User wants to see more about a specific event. When the user clicks on that event, then the details for that event will expanded.
+Given User wants to see more about a specific event. When the user clicks on that event, then the details for that event will expanded.
 
 #### Scenario 3: Collapse the details
-User has seen the details and wants to collapse the details. When the user clicks on the expanded details, then the details will collapse again
+Given User has seen the details and wants to collapse the details. When the user clicks on the expanded details, then the details will collapse again
  
 ### User Story
 As a user should be able to see events occurring in the city of their choosing. The user should be able to to display and collapse event details if they want to see more or less information depending on thier preference.
@@ -29,10 +29,10 @@ A user should be able to choose how many events are listed. So that they know ho
 ## Feature 4 : Use App even when offline
 
 #### Scenario 1: Show cached data when offline
-When the user has no internet connection and they access the site, then the data is still accessible and viewable for the user.
+When the given user has no internet connection and when they access the site, then the data is still accessible and viewable for the user.
 
 #### Scenario 2: Show error if user tried to change location
-When a user has no internet and when they want to change location or information then an error is diplayed. 
+When a given user has no internet and when they want to change location or information, then an error is diplayed. 
 
 ### User Story
 The user should be able to access events even when they are offline.
