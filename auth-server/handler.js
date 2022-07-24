@@ -27,7 +27,9 @@ const credentials = {
   redirect_uris: ['https://foliff.github.io/silver-meet/'],
   javascript_origins: ['https://foliff.github.io/', 'http://localhost:3000'],
 };
+
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
+
 const oAuth2Client = new google.auth.OAuth2(
   client_id,
   client_secret,
@@ -54,7 +56,12 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Metods': '*',
+      'Access-Control-Allow-Credentials': true,
+      "Accept": '*/*',
+      "Content-Type": 'application/json'
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -88,7 +95,12 @@ module.exports.getAccessToken = async (event) => {
     return{
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Metods': '*',
+        'Access-Control-Allow-Credentials': true,
+        "Accept": '*/*',
+        "Content-Type": 'application/json'
       },
       body: JSON.stringify(token),
     };
@@ -103,7 +115,7 @@ module.exports.getAccessToken = async (event) => {
 };
 
 /*--------Step 3: Get Calendar events---------*/
-module.exports.getCalendarEvents = event => {
+module.exports.getCalendarEvents = async (event) => {
   // The values used to instantiate the OAuthClient are at the top of the file
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
@@ -133,11 +145,16 @@ module.exports.getCalendarEvents = event => {
       }
     );
   })
-  .then(results => {
+  .then((results) => {
     return {
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Metods': '*',
+        'Access-Control-Allow-Credentials': true,
+        "Accept": '*/*',
+        "Content-Type": 'application/json'
       },
       body: JSON.stringify({ events: results.data.items })
     };
