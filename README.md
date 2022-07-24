@@ -44,3 +44,6 @@ When a given user is on the main page, they should be able to see upcoming event
 
 ### User Story 
 The User should be able to see charts with the number of upcoming events in their chosen city.
+
+# Dependencies
+- React
