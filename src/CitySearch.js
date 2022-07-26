@@ -25,6 +25,7 @@ class CitySearch extends Component {
       suggestions: []
     }
   }
+
   render() {
     return (
       <div className="CitySearch">
@@ -40,7 +41,7 @@ class CitySearch extends Component {
               key={suggestion}
               onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>
           ))}
-          <li>
+          <li key='all'>
             <b>See all cities</b>
           </li>
         </ul>
