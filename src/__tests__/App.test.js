@@ -6,7 +6,6 @@ import CitySearch from '../CitySearch';
 import NumberOfEvents from '../NumberOfEvents'
 
 describe('<App /> component', () => {
-
   let AppWrapper;
   beforeAll(() => {
     AppWrapper = shallow(<App />);
