@@ -11,25 +11,25 @@ describe('<Event /> component', () => {
     EventWrapper = shallow(<Event event={event} />);
   });
 
-  test('render title in event item', () => {
+  test('Render title in event item', () => {
     expect(EventWrapper.find('.event-summary-title')).toHaveLength(1);
   });
 
-  test('render info in event item', () => {
+  test('Render info in event item', () => {
     expect(EventWrapper.find('.event-info')).toHaveLength(1);
   });
 
-  test('render show details button in event item', () => {
+  test('Render show details button in event item', () => {
     expect(EventWrapper.find('.event-showDetails-btn')).toHaveLength(1);
   });
 
-  test('render event title correctly', () => {
+  test('Render event title correctly', () => {
     expect(EventWrapper.find('.event-summary-title').text()).toBe(
       event.summary
     );
   });
 
-  test('render event info correctly', () => {
+  test('Render event info correctly', () => {
     expect(EventWrapper.find('.event-info').text()).toContain(
       event.start.dateTime
     );
@@ -39,11 +39,11 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event-info').text()).toContain(event.location);
   });
 
-  test('render event collapsed by default', () => {
+  test('Render event collapsed by default', () => {
     expect(EventWrapper.state('show')).toBe(false);
   });
 
-  test('render click to expand event details', () => {
+  test('Render click to expand event details', () => {
     EventWrapper.setState({
       show: false
     });
@@ -51,7 +51,7 @@ describe('<Event /> component', () => {
     expect(EventWrapper.state('show')).toBe(true);
   });
 
-  test('render when event is collapsed after click expand event details', () => {
+  test('Render when event is collapsed after click expand event details', () => {
     EventWrapper.setState({
       show: true
     });
@@ -61,7 +61,7 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event-hideDetails-btn')).toHaveLength(1);
   });
 
-  test('render click to collapse event details', () => {
+  test('Render click to collapse event details', () => {
     EventWrapper.setState({
       show: true
     });
@@ -69,7 +69,7 @@ describe('<Event /> component', () => {
     expect(EventWrapper.state('show')).toBe(false);
   });
 
-  test('render when event is expanded after click collapse event details', () => {
+  test('Render when event is expanded after click collapse event details', () => {
     EventWrapper.setState({
       show: false
     });
