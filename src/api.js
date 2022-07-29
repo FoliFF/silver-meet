@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { mockData } from './mock-data';
-import { NProgress } from 'nprogress';
+import NProgress from 'nprogress';
 
 export const getAccessToken = async () => {
     const accessToken = localStorage.getItem('access_token');
