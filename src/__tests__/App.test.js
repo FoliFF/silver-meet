@@ -4,7 +4,7 @@ import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
 import NumberOfEvents from '../NumberOfEvents'
-import mockData from '../mock-data';
+import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
 
 //Task 4.3
@@ -48,6 +48,7 @@ describe('<App /> integration', () => {
   test('Get list of events matching the city selected by the user', async() => {
     const AppWrapper = mount(<App />);
     const CitySearchWrapper = AppWrapper.find(CitySearch);
+    //console.log('mockData', mockData);
     const locations = extractLocations(mockData);
     CitySearchWrapper.setState({ suggestions: locations });
     const suggestions = CitySearchWrapper.state('suggestions');
