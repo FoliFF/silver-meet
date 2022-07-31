@@ -47,3 +47,18 @@ The User should be able to see charts with the number of upcoming events in thei
 
 # Dependencies
 - React
+
+# Installation
+Required installation to get started with the App, follow these steps.
+
+#### Clone the repo
+
+´git clone https://github.com/leevee6039/meet.git´
+
+#### Install NPM packages
+
+´npm install´
+
+#### Start the app
+
+´npm run start´
