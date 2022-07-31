@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/silver-meet/static/css/main.9b5d2733.css",
-    "main.js": "/silver-meet/static/js/main.962186f4.js",
+    "main.js": "/silver-meet/static/js/main.1bffe470.js",
     "static/js/787.4b564826.chunk.js": "/silver-meet/static/js/787.4b564826.chunk.js",
     "service-worker.js": "/silver-meet/service-worker.js",
     "index.html": "/silver-meet/index.html",
     "main.9b5d2733.css.map": "/silver-meet/static/css/main.9b5d2733.css.map",
-    "main.962186f4.js.map": "/silver-meet/static/js/main.962186f4.js.map",
+    "main.1bffe470.js.map": "/silver-meet/static/js/main.1bffe470.js.map",
     "787.4b564826.chunk.js.map": "/silver-meet/static/js/787.4b564826.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9b5d2733.css",
-    "static/js/main.962186f4.js"
+    "static/js/main.1bffe470.js"
   ]
 }
