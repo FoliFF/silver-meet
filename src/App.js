@@ -3,7 +3,8 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { extractLocations, getEvents } from './api';
+import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
+import WelcomeScreen from './WelcomeScreen';
 
 class App extends Component {
   
@@ -26,10 +27,18 @@ class App extends Component {
     });
   }
 
-  componentDidMount() {
-    getEvents().then((events) => {
-      this.setState({ events, locations: extractLocations(events) });
-    });
+  async componentDidMount() {
+    this.mounted = true;
+    const accessToken = localStorage.getItem('access_token');
+    const isTokenValid = (await checkToken (accessToken)).error ? false : true;
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("code");
+    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    if ((code || isTokenValid) && this.mounted){
+      getEvents().then((events) => {
+        this.setState({ events, locations: extractLocations(events) });
+      });
+    }
   }
 
   componentWillUnmount(){
@@ -42,11 +51,13 @@ class App extends Component {
       events: [],
       locations: [],
       numberOfEvents: 32,
-      seletedLocation: 'all'
+      seletedLocation: 'all',
+      showWelcomeScreen: undefined,
     }
   }
 
   render() {
+    if (this.state.showWelcomeScreen === undefined) return <div className='App' />;
     return (
       <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
@@ -55,6 +66,7 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           updateEvents={this.updateEvents}
         />
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
       </div>
     );
   }
