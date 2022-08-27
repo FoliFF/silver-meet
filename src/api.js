@@ -41,20 +41,6 @@ const removeQuery = () => {
         window.history.pushState("", "", newurl);
     }
 };
-/*
-const getToken = async (code) => {
-    const encodeCode = encodeURIComponent(code);
-    const { access_token } = await fetch(
-        'https://22shhszda1.execute-api.eu-north-1.amazonaws.com/dev/api/token' + '/' + encodeCode
-        ).then((res) => {
-            return res.json();
-        })
-        .catch((error) => error);
-    
-    access_token && localStorage.setItem("access_token", access_token);
-    return access_token;
-};
-*/
 
     //Second getToken code in case the first one isn't working.
 const getToken = async (code) => {
@@ -79,6 +65,12 @@ export const getEvents = async () => {
     
     if (window.location.href.startsWith('http://localhost')){
         return mockData;
+    }
+
+    if (!navigator.onLine) {
+        const data = localStorage.getItem("lastEvents");
+        NProgress.done();
+        return data?JSON.parse(data).events:[];
     }
 
     const token = await getAccessToken();
