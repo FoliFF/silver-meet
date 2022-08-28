@@ -38,7 +38,12 @@ class App extends Component {
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
     if ((code || isTokenValid) && this.mounted){
       getEvents().then((events) => {
-        this.setState({ events, locations: extractLocations(events) });
+        if (this.mounted){
+          this.setState({ 
+            events: events.slice(0, this.state.numberOfEvents), 
+            locations: extractLocations(events) 
+          });
+        }
       });
     }
   }
