@@ -44,21 +44,18 @@ const removeQuery = () => {
 
     //Second getToken code in case the first one isn't working.
 const getToken = async (code) => {
-    try {
-        const encodeCode = encodeURIComponent(code);
+    const encodeCode = encodeURIComponent(code);
 
-        // eslint-disable-next-line no-useless-concat
-        const response = await fetch( 'https://22shhszda1.execute-api.eu-north-1.amazonaws.com/dev/api/token' + '/' + encodeCode);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const { access_token } = await response.json();
-        access_token && localStorage.setItem("access_token", access_token);
-        return access_token;
-    } catch(error) {
-        error.json();
-    }
-}
+    // eslint-disable-next-line no-useless-concat
+    const { access_token } = await fetch( 'https://22shhszda1.execute-api.eu-north-1.amazonaws.com/dev/api/token' + '/' + encodeCode)
+        .then((res) => {
+            return res.json();
+        })
+        .catch((error) => error);
+    access_token && localStorage.setItem("access_token", access_token);
+    
+    return access_token;
+};
 
 export const getEvents = async () => {
     NProgress.start();
