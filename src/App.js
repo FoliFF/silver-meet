@@ -6,6 +6,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import EventGenre from './EventGenre';
 
 class App extends Component {
   
@@ -86,6 +87,7 @@ class App extends Component {
           updateEvents={this.updateEvents}
         />
         <h4>Events in each city</h4>
+        <EventGenre events={events} />
         <ResponsiveContainer height={400}>
           <ScatterChart
               margin={{
@@ -94,7 +96,7 @@ class App extends Component {
               bottom: 20,
               left: 20,
             }}
-          >  
+          > 
             <CartesianGrid />
             <XAxis type="number" dataKey="x" name="stature" unit="cm" />
             <YAxis type="number" dataKey="y" name="weight" unit="kg" />
