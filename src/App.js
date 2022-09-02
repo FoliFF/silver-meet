@@ -6,7 +6,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import EventGenre from './EventGenre';
+//import EventGenre from './EventGenre';
 
 class App extends Component {
   
@@ -33,6 +33,7 @@ class App extends Component {
   async componentDidMount() {
     this.mounted = true;
     const accessToken = localStorage.getItem('access_token');
+    //console.log("accessToken", accessToken);
     const isTokenValid = (await checkToken (accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
@@ -87,7 +88,7 @@ class App extends Component {
           updateEvents={this.updateEvents}
         />
         <h4>Events in each city</h4>
-        <EventGenre events={events} />
+        
         <ResponsiveContainer height={400}>
           <ScatterChart
               margin={{

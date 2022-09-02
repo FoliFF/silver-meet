@@ -49,10 +49,13 @@ const getToken = async (code) => {
     // eslint-disable-next-line no-useless-concat
     const { access_token } = await fetch( 'https://22shhszda1.execute-api.eu-north-1.amazonaws.com/dev/api/token' + '/' + encodeCode)
         .then((res) => {
+            console.log("access_token", access_token);
             return res.json();
         })
         .catch((error) => error);
+        console.log("access_token", access_token);
     access_token && localStorage.setItem("access_token", access_token);
+    
     
     return access_token;
 };
